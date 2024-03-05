@@ -8,7 +8,7 @@ function App() {
     <div className="App">
       
 
-      <header className="App_header">
+      <header className="AppHeader">
         <h1 className="title">
           Pokedex Kanto 
         </h1>

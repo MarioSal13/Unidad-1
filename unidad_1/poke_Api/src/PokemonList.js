@@ -7,19 +7,17 @@ const PokemonList = () => {
     const fetchData = async () => {
       try {
         const response = await fetch('https://pokeapi.co/api/v2/pokemon?limit=151&offset=0');
-        if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
         const data = await response.json();
 
         const getPokemonDetails = async (pokemon) => {
           const detailsResponse = await fetch(pokemon.url);
-          if (!detailsResponse.ok) throw new Error(`HTTP error! Status: ${detailsResponse.status}`);
           const detailsData = await detailsResponse.json();
 
           const speciesResponse = await fetch(detailsData.species.url);
-          if (!speciesResponse.ok) throw new Error(`HTTP error! Status: ${speciesResponse.status}`);
           const speciesData = await speciesResponse.json();
           const englishDescription = speciesData.flavor_text_entries.find(
             (entry) => entry.language.name === 'en'
+
           ).flavor_text;
 
           return {
@@ -43,7 +41,6 @@ const PokemonList = () => {
 
   const getTypeColor = (types) => {
     const typeArray = types.split(', ');
-    // Tomamos el color del primer tipo (puedes ajustar esto según tus preferencias)
     const primaryType = typeArray[0];
   
     switch (primaryType) {
