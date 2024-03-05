@@ -1,0 +1,55 @@
+.App{
+  padding: 30px;
+  background-color: #282c34;
+  min-height: 100vh;
+}
+
+.App_header{
+  background-color: #282c34;
+  display: flex;
+  flex-direction: row;
+  font-size: calc(2px + 2vmin);
+  color: white;
+  margin: 20px;
+  justify-content: center;
+}
+
+
+.AppHeaderEnd{
+  background-color: #ffffff;
+  display: flex;
+  font-size: calc(2px + 2vmin);
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  text-align: center;
+
+}
+
+.AppHeaderDiv{
+  background-color: #ffffff;
+  display: flex;
+  font-size: calc(2px + 2vmin);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.Img{
+  width: 20%;
+  height: 20%;
+  text-align: start;
+}
+
+.title{
+  color: rgb(255, 255, 255);
+  text-align: center;
+  justify-content: center;
+  flex: auto;
+}
+
+
+
+
