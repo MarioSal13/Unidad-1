@@ -14,7 +14,7 @@ function App() {
         </h1>
       </header>
 
-      <header>
+      <header className='AppHeaderDiv'>
       <PokemonList />
       </header>
      

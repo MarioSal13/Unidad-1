@@ -14,32 +14,24 @@
   justify-content: center;
 }
 
-
-.AppHeaderEnd{
-  background-color: #ffffff;
-  display: flex;
-  font-size: calc(2px + 2vmin);
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  text-align: center;
-
-}
-
 .AppHeaderDiv{
   background-color: #ffffff;
   display: flex;
   font-size: calc(2px + 2vmin);
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
   text-align: center;
 }
 
+.AppHeaderEnd{
+  font-size: 10px;
+
+}
 .Img{
-  width: 20%;
-  height: 20%;
+  width: 30%;
+  height: 30%;
   text-align: start;
 }
 

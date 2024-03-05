@@ -24,51 +24,51 @@ function App() {
     <header className = "App_header_end">
       
       <p className="componente_cartas">
-      <CartasCompontentes  link={" https://cdn.tictuk.com/090ea518-0179-bce6-ea53-4b55b81c379e/673ac5fe-d5c0-55e4-0cef-7744c2e0297a.jpeg?a=bef5faf9-e9a9-e98f-95fa-201bd080c056"} text={"combo 1"}  buton={"pedir"}/>
+      <CartasCompontentes  link={"https://cdn.tictuk.com/090ea518-0179-bce6-ea53-4b55b81c379e/673ac5fe-d5c0-55e4-0cef-7744c2e0297a.jpeg?a=bef5faf9-e9a9-e98f-95fa-201bd080c056"} text={"combo 1"}  buton={"pedir"}/>
       </p>
 
       <p className="componente_cartas">
-      <CartasCompontentes  link={" https://cdn.tictuk.com/090ea518-0179-bce6-ea53-4b55b81c379e/673ac5fe-d5c0-55e4-0cef-7744c2e0297a.jpeg?a=bef5faf9-e9a9-e98f-95fa-201bd080c056"} text={"combo 2"}  buton={"pedir"}/>
+      <CartasCompontentes  link={"https://cdn.tictuk.com/090ea518-0179-bce6-ea53-4b55b81c379e/673ac5fe-d5c0-55e4-0cef-7744c2e0297a.jpeg?a=bef5faf9-e9a9-e98f-95fa-201bd080c056"} text={"combo 2"}  buton={"pedir"}/>
       </p>
 
       <p className="componente_cartas">
-      <CartasCompontentes  link={" https://cdn.tictuk.com/090ea518-0179-bce6-ea53-4b55b81c379e/673ac5fe-d5c0-55e4-0cef-7744c2e0297a.jpeg?a=bef5faf9-e9a9-e98f-95fa-201bd080c056"} text={"combo 3"}  buton={"pedir"}/>
+      <CartasCompontentes  link={"https://cdn.tictuk.com/090ea518-0179-bce6-ea53-4b55b81c379e/673ac5fe-d5c0-55e4-0cef-7744c2e0297a.jpeg?a=bef5faf9-e9a9-e98f-95fa-201bd080c056"} text={"combo 3"}  buton={"pedir"}/>
       </p>
 
       <p className="componente_cartas">
-      <CartasCompontentes  link={" https://cdn.tictuk.com/090ea518-0179-bce6-ea53-4b55b81c379e/673ac5fe-d5c0-55e4-0cef-7744c2e0297a.jpeg?a=bef5faf9-e9a9-e98f-95fa-201bd080c056"} text={"combo 4"}  buton={"pedir"}/>
+      <CartasCompontentes  link={"https://cdn.tictuk.com/090ea518-0179-bce6-ea53-4b55b81c379e/673ac5fe-d5c0-55e4-0cef-7744c2e0297a.jpeg?a=bef5faf9-e9a9-e98f-95fa-201bd080c056"} text={"combo 4"}  buton={"pedir"}/>
       </p>
 
       <p className="componente_cartas">
-      <CartasCompontentes  link={" https://cdn.tictuk.com/090ea518-0179-bce6-ea53-4b55b81c379e/673ac5fe-d5c0-55e4-0cef-7744c2e0297a.jpeg?a=bef5faf9-e9a9-e98f-95fa-201bd080c056"} text={"combo 5"}  buton={"pedir"}/>
+      <CartasCompontentes  link={"https://cdn.tictuk.com/090ea518-0179-bce6-ea53-4b55b81c379e/673ac5fe-d5c0-55e4-0cef-7744c2e0297a.jpeg?a=bef5faf9-e9a9-e98f-95fa-201bd080c056"} text={"combo 5"}  buton={"pedir"}/>
       </p>
 
       <p className="componente_cartas">
-      <CartasCompontentes  link={" https://cdn.tictuk.com/090ea518-0179-bce6-ea53-4b55b81c379e/673ac5fe-d5c0-55e4-0cef-7744c2e0297a.jpeg?a=bef5faf9-e9a9-e98f-95fa-201bd080c056"} text={"combo 6"}  buton={"pedir"}/>
+      <CartasCompontentes  link={"https://cdn.tictuk.com/090ea518-0179-bce6-ea53-4b55b81c379e/673ac5fe-d5c0-55e4-0cef-7744c2e0297a.jpeg?a=bef5faf9-e9a9-e98f-95fa-201bd080c056"} text={"combo 6"}  buton={"pedir"}/>
       </p>
 
       <p className="componente_cartas">
-      <CartasCompontentes  link={" https://cdn.tictuk.com/090ea518-0179-bce6-ea53-4b55b81c379e/673ac5fe-d5c0-55e4-0cef-7744c2e0297a.jpeg?a=bef5faf9-e9a9-e98f-95fa-201bd080c056"} text={"combo 7"}  buton={"pedir"}/>
+      <CartasCompontentes  link={"https://cdn.tictuk.com/090ea518-0179-bce6-ea53-4b55b81c379e/673ac5fe-d5c0-55e4-0cef-7744c2e0297a.jpeg?a=bef5faf9-e9a9-e98f-95fa-201bd080c056"} text={"combo 7"}  buton={"pedir"}/>
       </p>
 
       <p className="componente_cartas">
-      <CartasCompontentes  link={" https://cdn.tictuk.com/090ea518-0179-bce6-ea53-4b55b81c379e/673ac5fe-d5c0-55e4-0cef-7744c2e0297a.jpeg?a=bef5faf9-e9a9-e98f-95fa-201bd080c056"} text={"combo 8"}  buton={"pedir"}/>
+      <CartasCompontentes  link={"https://cdn.tictuk.com/090ea518-0179-bce6-ea53-4b55b81c379e/673ac5fe-d5c0-55e4-0cef-7744c2e0297a.jpeg?a=bef5faf9-e9a9-e98f-95fa-201bd080c056"} text={"combo 8"}  buton={"pedir"}/>
       </p>
 
       <p className="componente_cartas">
-      <CartasCompontentes  link={" https://cdn.tictuk.com/090ea518-0179-bce6-ea53-4b55b81c379e/673ac5fe-d5c0-55e4-0cef-7744c2e0297a.jpeg?a=bef5faf9-e9a9-e98f-95fa-201bd080c056"} text={"combo 9"}  buton={"pedir"}/>
+      <CartasCompontentes  link={"https://cdn.tictuk.com/090ea518-0179-bce6-ea53-4b55b81c379e/673ac5fe-d5c0-55e4-0cef-7744c2e0297a.jpeg?a=bef5faf9-e9a9-e98f-95fa-201bd080c056"} text={"combo 9"}  buton={"pedir"}/>
       </p>
 
       <p className="componente_cartas">
-      <CartasCompontentes  link={" https://cdn.tictuk.com/090ea518-0179-bce6-ea53-4b55b81c379e/673ac5fe-d5c0-55e4-0cef-7744c2e0297a.jpeg?a=bef5faf9-e9a9-e98f-95fa-201bd080c056"} text={"combo 10"}  buton={"pedir"}/>
+      <CartasCompontentes  link={"https://cdn.tictuk.com/090ea518-0179-bce6-ea53-4b55b81c379e/673ac5fe-d5c0-55e4-0cef-7744c2e0297a.jpeg?a=bef5faf9-e9a9-e98f-95fa-201bd080c056"} text={"combo 10"}  buton={"pedir"}/>
       </p>
 
       <p className="componente_cartas">
-      <CartasCompontentes  link={" https://cdn.tictuk.com/090ea518-0179-bce6-ea53-4b55b81c379e/673ac5fe-d5c0-55e4-0cef-7744c2e0297a.jpeg?a=bef5faf9-e9a9-e98f-95fa-201bd080c056"} text={"combo 11"}  buton={"pedir"}/>
+      <CartasCompontentes  link={"https://cdn.tictuk.com/090ea518-0179-bce6-ea53-4b55b81c379e/673ac5fe-d5c0-55e4-0cef-7744c2e0297a.jpeg?a=bef5faf9-e9a9-e98f-95fa-201bd080c056"} text={"combo 11"}  buton={"pedir"}/>
       </p>
 
       <p className="componente_cartas">
-      <CartasCompontentes  link={" https://cdn.tictuk.com/090ea518-0179-bce6-ea53-4b55b81c379e/673ac5fe-d5c0-55e4-0cef-7744c2e0297a.jpeg?a=bef5faf9-e9a9-e98f-95fa-201bd080c056"} text={"combo 12"}  buton={"pedir"}/>
+      <CartasCompontentes  link={"https://cdn.tictuk.com/090ea518-0179-bce6-ea53-4b55b81c379e/673ac5fe-d5c0-55e4-0cef-7744c2e0297a.jpeg?a=bef5faf9-e9a9-e98f-95fa-201bd080c056"} text={"combo 12"}  buton={"pedir"}/>
       </p>
       
       
