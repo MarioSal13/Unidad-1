@@ -1,24 +1,21 @@
 .App{
-  padding: 30px;
-  background-color: #282c34;
+  background-color: #ffffff;
   min-height: 100vh;
 }
 
 .AppHeader{
-  background-color: #282c34;
+  background-color: #dd0202;
   display: flex;
   flex-direction: row;
   font-size: calc(2px + 2vmin);
   color: white;
-  margin: 20px;
   justify-content: center;
+  padding: 10px;
 }
 
 .AppHeaderEnd {
   display: flex;
-  flex-wrap: wrap;  
-  justify-content: space-evenly; 
-  
+  flex-direction: column;
 }
 
 .AppHeaderEnd > div {
@@ -29,6 +26,24 @@
   padding: 10px;
 }
 
+.AppHeaderMid{
+  background-color: #282c34;
+  display: flex;
+  font-size: calc(2px + 2vmin);
+  justify-content: center;
+}
+
+.SerBar{
+  flex: 13;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.SerBarBut{
+  flex: 1;
+  border-radius: 10px;
+  padding: 5px;
+}
 .AppHeaderDiv{
   background-color: #ffffff;
   display: flex;
@@ -40,18 +55,23 @@
 }
 
 .Img{
-  width: 30%;
-  height: 30%;
+  width: 50%;
+  height: 50%;
   text-align: start;
 }
 
-.title{
+.Title{
   color: rgb(255, 255, 255);
   text-align: center;
   justify-content: center;
   flex: auto;
 }
 
+.PokemonCard{
+  justify-content: center;
+  text-align: center;
+
+}
 
 
 

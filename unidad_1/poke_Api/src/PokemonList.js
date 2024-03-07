@@ -1,46 +1,22 @@
 import React, { useState, useEffect } from 'react';
 
 const PokemonList = () => {
-  const [pokemonList, setPokemonList] = useState([]);
+  const [pokemonName, setPokemonName] = useState('');
+  const [foundPokemon, setFoundPokemon] = useState(null);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch('https://pokeapi.co/api/v2/pokemon?limit=151&offset=0');
-        const data = await response.json();
+  const searchPokemon = async () => {
+    try {
+      const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName.toLowerCase()}`);
+      const data = await response.json();
 
-        const getPokemonDetails = async (pokemon) => {
-          const detailsResponse = await fetch(pokemon.url);
-          const detailsData = await detailsResponse.json();
-
-          const speciesResponse = await fetch(detailsData.species.url);
-          const speciesData = await speciesResponse.json();
-          const englishDescription = speciesData.flavor_text_entries.find(
-            (entry) => entry.language.name === 'en'
-
-          ).flavor_text;
-
-          return {
-            name: detailsData.name,
-            image: detailsData.sprites.front_default,
-            description: englishDescription,
-            type: detailsData.types.map((type) => type.type.name).join(', '),
-          };
-        };
-
-        const pokemonDetailsPromises = data.results.map(getPokemonDetails);
-        const pokemonDetails = await Promise.all(pokemonDetailsPromises);
-        setPokemonList(pokemonDetails);
-      } catch (error) {
-        console.error('Error fetching data:', error);
-      }
-    };
-
-    fetchData();
-  }, []);
+      setFoundPokemon(data);
+    } catch (error) {
+      console.error('Error al buscar el Pokémon:', error);
+    }
+  };
 
   const getTypeColor = (types) => {
-    const typeArray = types.split(', ');
+    const typeArray = types.map(type => type.type.name);
     const primaryType = typeArray[0];
   
     switch (primaryType) {
@@ -87,17 +63,49 @@ const PokemonList = () => {
   };
 
   return (
-    <div className='AppHeaderEnd'>
-      {pokemonList.map((pokemon) => (
-        <div key={pokemon.name} style={{ backgroundColor: getTypeColor(pokemon.type) }}>
-          <p>{pokemon.name}</p>
-          <img src={pokemon.image} alt={pokemon.name} className='Img' />
-          <p>Type: {pokemon.type}</p>
-          <p>{pokemon.description}</p>
+    <div className="App">
+      <header className="AppHeader">
+        <h1 className="Title">
+          <img src='https://user-images.githubusercontent.com/29473781/180619084-a56960ab-7efa-4e34-9d33-4e3e581d62ff.png' alt="PokeAPI Logo" />
+        </h1>
+      </header>
+
+      <div className='AppHeaderMid'>
+        <input
+          type="text"
+          className="SerBar"
+          placeholder="Pokemon"
+          value={pokemonName}
+          onChange={(e) => setPokemonName(e.target.value)}
+        />
+        <input
+          type="button"
+          className="SerBarBut"
+          value="Buscar"
+          onClick={searchPokemon}
+        />
+      </div>
+
+      {foundPokemon && (
+        <div className="AppHeaderEnd">
+          <div style={{backgroundColor: getTypeColor(foundPokemon.types)}} className='PokemonCard'>
+            <h2>{foundPokemon.name}</h2>
+            <img src={foundPokemon.sprites.front_default} alt={foundPokemon.name} className='Img' />
+            <div>
+            <input type='button' value='Ver Mas' className='MoreInfButton'/>
+          </div>
+          </div>
+
+          
+
         </div>
-      ))}
+
+
+      )}
+
+
     </div>
   );
-};
+}
 
 export default PokemonList;
