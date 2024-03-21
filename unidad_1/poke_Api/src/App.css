@@ -15,7 +15,7 @@
 
 .AppHeaderEnd {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
 }
 
 .AppHeaderEnd > div {
@@ -73,8 +73,75 @@
 
 }
 
-.PokemonDetails{
-  text-align: center;
+.PokemonDetails {
+  background-color: #f8f8f8;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-top: 20px;
+  align-items: center;
 }
 
+.PokemonDetails h3 {
+  margin-top: 0;
+  font-size: 24px;
+  color: #333;
+}
 
+.PokemonDetails h4 {
+  font-size: 18px;
+  color: #000000;
+}
+
+.PokemonDetails p {
+  color: #000000;
+  margin-top: 5px;
+}
+
+.PokemonDetails button {
+  background-color: #ff4d4f;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-top: 15px;
+  font-size: 16px;
+}
+
+.PokemonDetails button:hover {
+  background-color: #ff7875;
+}
+
+.PokemonDetails .Img {
+  max-width: 100%;
+  height: auto;
+  margin-top: 10px;
+}
+
+.PokemonDetails .PokemonSprites {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.PokemonDetails .PokemonSprites img {
+  max-width: 100px;
+  height: auto;
+  margin: 10px;
+}
+
+.MoreInfButton{
+  background-color: #ff4d4f;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-top: 15px;
+  font-size: 16px;
+}
+
+.MoreInfButton:hover{
+  background-color: #ff7875;
+}

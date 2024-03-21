@@ -4,6 +4,7 @@ import './App.css';
 const PokemonList = () => {
   const [pokemonName, setPokemonName] = useState('');
   const [foundPokemon, setFoundPokemon] = useState(null);
+  const [pokemonDescription, setPokemonDescription] = useState('');
   const [showDetails, setShowDetails] = useState(false);
 
   const searchPokemon = async () => {
@@ -12,6 +13,13 @@ const PokemonList = () => {
       const data = await response.json();
 
       setFoundPokemon(data);
+
+      const speciesResponse = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${pokemonName.toLowerCase()}`);
+      const speciesData = await speciesResponse.json();
+      
+      const englishDescription = speciesData.flavor_text_entries.find(entry => entry.language.name === 'en');
+      setPokemonDescription(englishDescription ? englishDescription.flavor_text : 'Descripción no disponible');
+
     } catch (error) {
       console.error('Error al buscar el Pokémon:', error);
     }
@@ -102,17 +110,36 @@ const PokemonList = () => {
               <input type='button' value='Ver Mas' className='MoreInfButton' onClick={toggleDetails}/>
             </div>
           </div>
+
           {showDetails && (
-            <div className="PokemonDetails">
+            <div style={{backgroundColor: getTypeColor(foundPokemon.types)}} className="PokemonDetails">
               <h3>Detalles de {foundPokemon.name}</h3>
-              <p>Altura: {foundPokemon.height}</p>
-              <p>Peso: {foundPokemon.weight}</p>
-              <p>Tipos:</p>
-              <ul>
+              <h4> Descripcion </h4>
+              <p> {pokemonDescription}</p>
+              <h4>Altura: {foundPokemon.height} cm</h4>
+              <h4>Peso: {foundPokemon.weight} kg</h4>
+              <h4>Tipos:</h4>
+              <p>
                 {foundPokemon.types.map((type, index) => (
-                  <li key={index}>{type.type.name}</li>
+                  <p key={index}>{type.type.name}</p>
                 ))}
-              </ul>
+              </p>
+               <div> 
+                    <h4> Male Version </h4>
+                    <img src={foundPokemon.sprites.front_default} alt={foundPokemon.name} className='Img' />
+                    <h4> Female Version </h4>
+                    {foundPokemon.sprites.front_female === null ? (
+                        <img src={foundPokemon.sprites.front_default} alt={foundPokemon.name} className='Img' />
+                      ) : (
+                        <img src={foundPokemon.sprites.front_female} alt={foundPokemon.name} className='Img' />
+                      )}
+                    <h4>Shyni Version</h4>
+                    <img src={foundPokemon.sprites.front_shiny} alt={foundPokemon.name} className='Img'/>
+                    <h4> Movimientos</h4>
+                    {foundPokemon.moves.map((move, index) => (
+                    <p key={index}>{move.move.name}</p>
+                    ))}
+               </div>
               <button onClick={toggleDetails}>Cerrar</button>
             </div>
           )}
