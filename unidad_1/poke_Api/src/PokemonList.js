@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import './App.css';
 
 const PokemonList = () => {
   const [pokemonName, setPokemonName] = useState('');
   const [foundPokemon, setFoundPokemon] = useState(null);
+  const [showDetails, setShowDetails] = useState(false);
 
   const searchPokemon = async () => {
     try {
@@ -62,6 +64,10 @@ const PokemonList = () => {
     }
   };
 
+  const toggleDetails = () => {
+    setShowDetails(!showDetails);
+  };
+
   return (
     <div className="App">
       <header className="AppHeader">
@@ -91,19 +97,27 @@ const PokemonList = () => {
           <div style={{backgroundColor: getTypeColor(foundPokemon.types)}} className='PokemonCard'>
             <h2>{foundPokemon.name}</h2>
             <img src={foundPokemon.sprites.front_default} alt={foundPokemon.name} className='Img' />
+           
             <div>
-            <input type='button' value='Ver Mas' className='MoreInfButton'/>
+              <input type='button' value='Ver Mas' className='MoreInfButton' onClick={toggleDetails}/>
+            </div>
           </div>
-          </div>
-
-          
-
+          {showDetails && (
+            <div className="PokemonDetails">
+              <h3>Detalles de {foundPokemon.name}</h3>
+              <p>Altura: {foundPokemon.height}</p>
+              <p>Peso: {foundPokemon.weight}</p>
+              <p>Tipos:</p>
+              <ul>
+                {foundPokemon.types.map((type, index) => (
+                  <li key={index}>{type.type.name}</li>
+                ))}
+              </ul>
+              <button onClick={toggleDetails}>Cerrar</button>
+            </div>
+          )}
         </div>
-
-
       )}
-
-
     </div>
   );
 }
