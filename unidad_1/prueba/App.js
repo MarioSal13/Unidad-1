@@ -1,13 +1,12 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import Boton from './button';
+import MyTitleCompoent from './Tittle';
 
 export default function App() {
   return (
     <View style={styles.container}>
+      <MyTitleCompoent info={"Hola presiona el boton"}/>
       <Boton titulo={"presioname" } onPress={"gracias ;D"}/>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
     </View>
   );
 }
