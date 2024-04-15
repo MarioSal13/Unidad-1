@@ -77,9 +77,9 @@ const PokemonList = () => {
   };
 
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+    <View style={{ flex: 3, alignItems: 'center', justifyContent: 'center' }}>
       <View style={{ alignItems: 'center' }}>
-        <Image source={{ uri: 'https://user-images.githubusercontent.com/29473781/180619084-a56960ab-7efa-4e34-9d33-4e3e581d62ff.png' }} style={{ width: 200, height: 100 }} />
+        <Image source={{ uri: 'https://user-images.githubusercontent.com/29473781/180619084-a56960ab-7efa-4e34-9d33-4e3e581d62ff.png' }} style={{ width: 300, height: 100 }} />
       </View>
 
       <View style={{ flexDirection: 'row', marginTop: 20 }}>
@@ -116,10 +116,6 @@ const PokemonList = () => {
               <Text>Tipos:</Text>
               {foundPokemon.types.map((type, index) => (
                 <Text key={index}>{type.type.name}</Text>
-              ))}
-              <Text>Movimientos:</Text>
-              {foundPokemon.moves.map((move, index) => (
-                <Text key={index}>{move.move.name}</Text>
               ))}
               <Button title="Cerrar" onPress={toggleDetails} />
             </View>
