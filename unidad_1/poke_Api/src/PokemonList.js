@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity, Image, Button } from 'react-native';
+import React, { useState,} from 'react';
+import './App.css';
 
 const PokemonList = () => {
   const [pokemonName, setPokemonName] = useState('');
@@ -77,56 +77,75 @@ const PokemonList = () => {
   };
 
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <View style={{ alignItems: 'center' }}>
-        <Image source={{ uri: 'https://user-images.githubusercontent.com/29473781/180619084-a56960ab-7efa-4e34-9d33-4e3e581d62ff.png' }} style={{ width: 200, height: 100 }} />
-      </View>
+    <div className="App">
+      <header className="AppHeader">
+        <h1 className="Title">
+          <img src='https://user-images.githubusercontent.com/29473781/180619084-a56960ab-7efa-4e34-9d33-4e3e581d62ff.png' alt="PokeAPI Logo" />
+        </h1>
+      </header>
 
-      <View style={{ flexDirection: 'row', marginTop: 20 }}>
-        <TextInput
-          style={{ height: 40, width: 200, borderColor: 'gray', borderWidth: 1, marginRight: 10 }}
+      <div className='AppHeaderMid'>
+        <input
+          type="text"
+          className="SerBar"
           placeholder="Pokemon"
           value={pokemonName}
-          onChangeText={(text) => setPokemonName(text)}
+          onChange={(e) => setPokemonName(e.target.value)}
         />
-        <TouchableOpacity
-          style={{ backgroundColor: 'blue', padding: 10, borderRadius: 5 }}
-          onPress={searchPokemon}
-        >
-          <Text style={{ color: 'white' }}>Buscar</Text>
-        </TouchableOpacity>
-      </View>
+        <input
+          type="button"
+          className="SerBarBut"
+          value="Buscar"
+          onClick={searchPokemon}
+        />
+      </div>
 
       {foundPokemon && (
-        <View style={{ marginTop: 20 }}>
-          <View style={{ backgroundColor: getTypeColor(foundPokemon.types), padding: 10, borderRadius: 5, alignItems: 'center' }}>
-            <Text>{foundPokemon.name}</Text>
-            <Image source={{ uri: foundPokemon.sprites.front_default }} style={{ width: 100, height: 100 }} />
-            <TouchableOpacity style={{ backgroundColor: 'green', padding: 5, marginTop: 5, borderRadius: 5 }} onPress={toggleDetails}>
-              <Text style={{ color: 'white' }}>Ver Más</Text>
-            </TouchableOpacity>
-          </View>
+        <div className="AppHeaderEnd">
+          <div style={{backgroundColor: getTypeColor(foundPokemon.types)}} className='PokemonCard'>
+            <h2>{foundPokemon.name}</h2>
+            <img src={foundPokemon.sprites.front_default} alt={foundPokemon.name} className='Img' />
+           
+            <div>
+              <input type='button' value='Ver Mas' className='MoreInfButton' onClick={toggleDetails}/>
+            </div>
+          </div>
 
           {showDetails && (
-            <View style={{ backgroundColor: getTypeColor(foundPokemon.types), padding: 10, borderRadius: 5, marginTop: 10 }}>
-              <Text>Detalles de {foundPokemon.name}</Text>
-              <Text>Descripción: {pokemonDescription}</Text>
-              <Text>Altura: {foundPokemon.height} cm</Text>
-              <Text>Peso: {foundPokemon.weight} kg</Text>
-              <Text>Tipos:</Text>
-              {foundPokemon.types.map((type, index) => (
-                <Text key={index}>{type.type.name}</Text>
-              ))}
-              <Text>Movimientos:</Text>
-              {foundPokemon.moves.map((move, index) => (
-                <Text key={index}>{move.move.name}</Text>
-              ))}
-              <Button title="Cerrar" onPress={toggleDetails} />
-            </View>
+            <div style={{backgroundColor: getTypeColor(foundPokemon.types)}} className="PokemonDetails">
+              <h3>Detalles de {foundPokemon.name}</h3>
+              <h4> Descripcion </h4>
+              <p> {pokemonDescription}</p>
+              <h4>Altura: {foundPokemon.height} cm</h4>
+              <h4>Peso: {foundPokemon.weight} kg</h4>
+              <h4>Tipos:</h4>
+              <p>
+                {foundPokemon.types.map((type, index) => (
+                  <p key={index}>{type.type.name}</p>
+                ))}
+              </p>
+               <div> 
+                    <h4> Male Version </h4>
+                    <img src={foundPokemon.sprites.front_default} alt={foundPokemon.name} className='Img' />
+                    <h4> Female Version </h4>
+                    {foundPokemon.sprites.front_female === null ? (
+                        <img src={foundPokemon.sprites.front_default} alt={foundPokemon.name} className='Img' />
+                      ) : (
+                        <img src={foundPokemon.sprites.front_female} alt={foundPokemon.name} className='Img' />
+                      )}
+                    <h4>Shyni Version</h4>
+                    <img src={foundPokemon.sprites.front_shiny} alt={foundPokemon.name} className='Img'/>
+                    <h4> Movimientos</h4>
+                    {foundPokemon.moves.map((move, index) => (
+                    <p key={index}>{move.move.name}</p>
+                    ))}
+               </div>
+              <button onClick={toggleDetails}>Cerrar</button>
+            </div>
           )}
-        </View>
+        </div>
       )}
-    </View>
+    </div>
   );
 }
 
